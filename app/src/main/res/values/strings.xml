@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Live Streaming</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="start_player">Start player</string>
+    <string name="stop_player">Stop player</string>
+    <string name="yourendpoint">yourendpoint</string>
 </resources>

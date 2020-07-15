@@ -1,2 +1,4 @@
+include ':giraffeplayer'
+include ':ijkplayer-java'
 rootProject.name='My Application'
 include ':app'
