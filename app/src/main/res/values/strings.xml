@@ -5,4 +5,7 @@
     <string name="start_player">Start player</string>
     <string name="stop_player">Stop player</string>
     <string name="yourendpoint">yourendpoint</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hint_input_url">Enter input url</string>
 </resources>
