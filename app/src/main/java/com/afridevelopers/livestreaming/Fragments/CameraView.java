@@ -1,5 +1,6 @@
 package com.afridevelopers.livestreaming.Fragments;
 
+import android.media.AudioManager;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -80,8 +81,11 @@ public class CameraView extends Fragment implements ConnectCheckerRtmp, SurfaceH
                     rctNodePlayerView.stop();
                     btn_streamPlay.setText("Play Stream");
                 } else {
-                    rctNodePlayerView.play("http://pullstream.peeglelive.com/live/LIVEROOM414221594801930.flv");
+                    rctNodePlayerView.play("http://pullstream.peeglelive.com/live/LIVEROOM414221594800260.flv");
                     btn_streamPlay.setText("Stop Stream");
+//                    AudioManager am = (AudioManager) getContext().getSystemService(getContext().AUDIO_SERVICE);
+//                    am.requestAudioFocus(null, AudioManager.STREAM_VOICE_CALL, AudioManager.AUDIOFOCUS_GAIN);
+//                    am.setMode(AudioManager.MODE_IN_CALL);
                 }
             }
         });
@@ -120,7 +124,7 @@ public class CameraView extends Fragment implements ConnectCheckerRtmp, SurfaceH
                                rtmpCamera1.startRecord(
                                        folder.getAbsolutePath() + "/" + currentDateAndTime + ".mp4");
                                if(rtmpCamera1.isRecording()
-                                       || rtmpCamera1.prepareAudio(64 * 240, 32000, true, true, true) && rtmpCamera1.prepareVideo(320, 240, 24, 1200*240, true, rotation)){
+                                       || rtmpCamera1.prepareAudio(64 * 240, 32000, true, true, true) && rtmpCamera1.prepareVideo(256,144, 24, 1000*240, true, rotation)){
                                    rtmpCamera1.startStream(url);
                                    Log.d(TAG,"startStream "+url);
                                }
