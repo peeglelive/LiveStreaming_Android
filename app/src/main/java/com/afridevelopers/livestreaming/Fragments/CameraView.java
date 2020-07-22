@@ -24,6 +24,8 @@ import com.afridevelopers.livestreaming.R;
 import com.afridevelopers.livestreaming.RCTNodePlayerView;
 import com.pedro.encoder.input.video.CameraHelper;
 import com.pedro.rtplibrary.rtmp.RtmpCamera1;
+import com.starrtc.starrtcsdk.api.XHClient;
+import com.starrtc.starrtcsdk.api.XHLiveManager;
 
 import net.ossrs.rtmp.ConnectCheckerRtmp;
 
@@ -44,6 +46,7 @@ public class CameraView extends Fragment implements ConnectCheckerRtmp, SurfaceH
     private String currentDateAndTime = "";
     private EditText streamUrl;
     private Button btn_streamPlay;
+    private XHLiveManager liveManager;
     private File folder = new File(Environment.getExternalStorageDirectory().getAbsolutePath()
             + "/rtmp-rtsp-stream-client-java");
 
@@ -64,6 +67,7 @@ public class CameraView extends Fragment implements ConnectCheckerRtmp, SurfaceH
         btn_streamPlay = rootView.findViewById(R.id.btn_play_stream);
         rtmpCamera1 = new RtmpCamera1(surfaceView, this);
         rtmpCamera1.setReTries(10);
+        liveManager = XHClient.getInstance().getLiveManager(getContext());
 
 
         rctNodePlayerView = new RCTNodePlayerView(getActivity(), new LifecycleEventListener() {

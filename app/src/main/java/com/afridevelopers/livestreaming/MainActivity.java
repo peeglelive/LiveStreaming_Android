@@ -22,6 +22,7 @@ import com.pedro.vlc.VlcVideoLibrary;
 import org.videolan.libvlc.MediaPlayer;
 import com.afridevelopers.livestreaming.Fragments.CameraView;
 import com.afridevelopers.livestreaming.Fragments.StreamDetailFragment;
+import com.starrtc.starrtcsdk.api.XHCustomConfig;
 
 import static android.os.Build.VERSION_CODES.JELLY_BEAN_MR2;
 import static android.os.Build.VERSION_CODES.LOLLIPOP;
@@ -44,6 +45,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.activity_main);
         setContentView(R.layout.activity_main);
+        XHCustomConfig customConfig =  XHCustomConfig.getInstance(this);
+        customConfig.setLiveSrcServerUrl("livebroadcast.co.za:19928");
+        customConfig.setLiveVdnServerUrl("livebroadcast.co.za:19931");
 
         addFragment(new StreamDetailFragment(this,this));
         /* FrameLayout frame = new FrameLayout(this);
